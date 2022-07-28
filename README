@@ -1,1 +1,4 @@
 For project to work correctly you need to make new folder, name it "Pilana123" and add all files except "packages" folder and "Pilana123.sln" file in that folder.
+This application presents WPF information system for automation of forwarding tasks in the company and it is programmed in C# programming language.
+The application is currently in Serbian language. English version is in process...
+For all other information please contact author by sending mail on nemanjajanjatovic1998@gmail.com email address.
