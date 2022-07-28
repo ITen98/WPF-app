@@ -1,0 +1,122 @@
+﻿<Window x:Class="Pilana123.GlavniMeni"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="16"
+        TextOptions.TextFormattingMode="Ideal" 
+        TextOptions.TextRenderingMode="Auto"        
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Pilana123"
+        Title="Početna"
+        mc:Ignorable="d"  Height="750" Width="1000" WindowStartupLocation="CenterScreen" WindowStyle="ThreeDBorderWindow" ResizeMode="CanMinimize" PreviewKeyDown="Window_PreviewKeyDown">
+    <Grid Background="#007070">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Menu IsMainMenu="True" Grid.Row="0" Background="#FF215913" Height="30" BorderThickness="0,0,0,1" BorderBrush="White" >
+            <Menu.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <DockPanel HorizontalAlignment="Stretch"/>
+                </ItemsPanelTemplate>
+            </Menu.ItemsPanel>
+            <MenuItem x:Name="Home" ToolTip="Kliknite da biste se vratili na početnu stranu!"  Header="Početna" Height="30" FontSize="14" FontWeight="Bold" Foreground="White" MouseEnter="Home_MouseEnter" MouseLeave="Home_MouseLeave" Click="Uizradi_Click" />
+            <MenuItem x:Name="Klijenti" ToolTip="Kliknite da biste videli više opcija!" Header="Klijenti" Height="30" FontSize="14" FontWeight="Bold" Foreground="White" MouseEnter="Klijenti_MouseEnter" MouseLeave="Klijenti_MouseLeave" Margin="0,0,0,-0.4" Width="82" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" Padding="20,0,-40,0">
+                <MenuItem x:Name="DodavanjeKlijenata" ToolTip="Kliknite da biste otvorili prozor za dodavanje klijenta!" Header="Dodaj klijenta" Height="25" Padding="8,0,8,0" Grid.IsSharedSizeScope="True" Margin="0,-10,0,0" Click="DodavanjeKlijenata_Click" MouseEnter="DodavanjeKlijenata_MouseEnter" MouseLeave="DodavanjeKlijenata_MouseLeave">
+                    <MenuItem.Icon>
+                        <materialDesign:PackIcon
+                            Kind="UserMultipleAdd" />
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem x:Name="TabelaKlijenata" ToolTip="Kliknite da biste otvorili prozor sa tabelom klijenata!" Header="Tabela klijenata" Height="25" Padding="8,0,8,0" Grid.IsSharedSizeScope="True" Margin="0,2,0,-15" Click="TabelaKlijenata_Click" MouseEnter="TabelaKlijenata_MouseEnter" MouseLeave="TabelaKlijenata_MouseLeave">
+                    <MenuItem.Icon>
+                        <materialDesign:PackIcon
+                            Kind="Table" />
+                    </MenuItem.Icon>
+                </MenuItem>
+            </MenuItem>
+            <MenuItem x:Name="Porudzbenice" ToolTip="Kliknite da biste videli više opcija!" Header="Porudžbenice" Height="30" FontSize="14" FontWeight="Bold" Foreground="White" MouseEnter="Porudzbenice_MouseEnter" MouseLeave="Porudzbenice_MouseLeave">
+                <MenuItem x:Name="Uizradi" Header="U izradi" ToolTip="Prozor je u izradi, klikom na ovu stavku vraćate se na početnu stranu!" Height="25" Padding="13,0,8,0" Grid.IsSharedSizeScope="True" Margin="0,-10,0,-16" Width="118" Click="Uizradi_Click" MouseEnter="Uizradi_MouseEnter" MouseLeave="Uizradi_MouseLeave">
+                    <MenuItem.Icon>
+                        <materialDesign:PackIcon
+                                Kind="Hammer" Margin="2,0,0,0" />
+                    </MenuItem.Icon>
+                </MenuItem>
+            </MenuItem>
+            <MenuItem x:Name="Ponude" Header="Ponude" ToolTip="Kliknite da biste videli više opcija!" Height="30" FontSize="14" FontWeight="Bold" Foreground="White" MouseEnter="Ponude_MouseEnter" MouseLeave="Ponude_MouseLeave">
+                <MenuItem x:Name="KreiranjePonude" Header="Kreiranje ponude" ToolTip="Kliknite da biste otvorili prozor za kreiranje ponuda!" Height="25" Padding="8,0,8,0" Grid.IsSharedSizeScope="True" Margin="0,-10,0,0" Click="KreiranjePonuda_Click" MouseEnter="KreiranjePonude_MouseEnter" MouseLeave="KreiranjePonude_MouseLeave">
+                    <MenuItem.Icon>
+                        <materialDesign:PackIcon
+                                Kind="Create" />
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem x:Name="TabelaPonuda" ToolTip="Kliknite da biste otvorili prozor sa tabelom ponuda!" Header="Tabela ponuda" Height="25" Padding="8,0,8,0" Grid.IsSharedSizeScope="True" Margin="0,2,0,-15" Click="TabelaPonuda_Click" MouseEnter="TabelaPonuda_MouseEnter" MouseLeave="TabelaPonuda_MouseLeave">
+                    <MenuItem.Icon>
+                        <materialDesign:PackIcon
+                                Kind="Table" />
+                    </MenuItem.Icon>
+                </MenuItem>
+            </MenuItem>
+            <MenuItem x:Name="Fakture" Header="Fakture" ToolTip="Kliknite da biste videli više opcija!" Height="30" FontSize="14" FontWeight="Bold" Foreground="White" MouseEnter="Fakture_MouseEnter" MouseLeave="Fakture_MouseLeave">
+                <MenuItem x:Name="KreiranjeFakture" Header="Kreiranje fakture" ToolTip="Kliknite da biste otvorili prozor za kreiranje faktura!" Height="25" Padding="8,0,8,0" Grid.IsSharedSizeScope="True" Margin="0,-10,0,0" Click="KreiranjeFaktura_Click" MouseEnter="KreiranjeFakture_MouseEnter" MouseLeave="KreiranjeFakture_MouseLeave">
+                    <MenuItem.Icon>
+                        <materialDesign:PackIcon
+                                Kind="UserMultipleAdd" />
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem x:Name="TabelaFaktura" Header="Tabela faktura" ToolTip="Kliknite da biste otvorili prozor sa tabelom faktura!" Height="25" Padding="8,0,8,0" Grid.IsSharedSizeScope="True" Margin="0,2,0,-15" Click="TabelaFaktura_Click" MouseEnter="TabelaFaktura_MouseEnter" MouseLeave="TabelaFaktura_MouseLeave">
+                    <MenuItem.Icon>
+                        <materialDesign:PackIcon
+                                Kind="Table" />
+                    </MenuItem.Icon>
+                </MenuItem>
+            </MenuItem>
+            <MenuItem x:Name="Otpremnice" Header="Otpremnice" ToolTip="Kliknite da biste videli više opcija!" Height="30" FontSize="14" FontWeight="Bold" Foreground="White" MouseEnter="Otpremnice_MouseEnter" MouseLeave="Otpremnice_MouseLeave">
+                <MenuItem x:Name="KreiranjeOtpremnice" Header="Kreiranje otpremnice" ToolTip="Kliknite da biste otvorili prozor za kreiranje otpremnica!" Height="25" Padding="8,0,8,0" Grid.IsSharedSizeScope="True" Margin="0,-10,0,0" Click="KreiranjeOtpremnica_Click" MouseEnter="KreiranjeOtpremnice_MouseEnter" MouseLeave="KreiranjeOtpremnice_MouseLeave">
+                    <MenuItem.Icon>
+                        <materialDesign:PackIcon
+                                Kind="UserMultipleAdd" />
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem x:Name="TabelaOtpremnica" Header="Tabela otpremnica" ToolTip="Kliknite da biste otvorili prozor sa tabelom otpremnica!" Height="25" Padding="8,0,8,0" Grid.IsSharedSizeScope="True" Margin="0,2,0,-15" Click="TabelaOtpremnica_Click" MouseEnter="TabelaOtpremnica_MouseEnter" MouseLeave="TabelaOtpremnica_MouseLeave">
+                    <MenuItem.Icon>
+                        <materialDesign:PackIcon
+                                Kind="Table" />
+                    </MenuItem.Icon>
+                </MenuItem>
+            </MenuItem>
+            <MenuItem x:Name="Pomoc" Header="Pomoć" Height="30" ToolTip="Kliknite da biste videli više opcija!" FontSize="14" FontWeight="Bold" Foreground="White" MouseEnter="Pomoc_MouseEnter" MouseLeave="Pomoc_MouseLeave" >
+                <MenuItem x:Name="About" Header="O programu" ToolTip="Kliknite da biste otvorili prozor sa informacijama o softveru!" Height="25" Padding="8,0,8,0" Grid.IsSharedSizeScope="True" Margin="0,-10,0,0" Click="About_Click" MouseEnter="About_MouseEnter" MouseLeave="About_MouseLeave">
+                    <MenuItem.Icon>
+                        <materialDesign:PackIcon
+                                Kind="About" />
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem x:Name="Help" Header="Uputstvo" ToolTip="Kliknite da biste otvorili upustvo za korišćenje softvera! &#x0a;Ovu opciju je moguće aktivirati i klikom na taster F1 u svim prozorima softvera" Height="25" Padding="8,0,8,0" Grid.IsSharedSizeScope="True" Margin="0,2,0,-15" MouseEnter="Help_MouseEnter" MouseLeave="Help_MouseLeave" Click="Help_Click">
+                    <MenuItem.Icon>
+                        <materialDesign:PackIcon
+                                Kind="PersonHelp" />
+                    </MenuItem.Icon>
+                </MenuItem>
+            </MenuItem>
+            <MenuItem x:Name="Odjava" ToolTip="Kliknite da biste se odjavili!" Header="Odjavi se" Height="30" FontSize="14" FontWeight="Bold" Foreground="White" HorizontalAlignment="Right" Click="Odjava_Click" MouseEnter="Odjava_MouseEnter" MouseLeave="Odjava_MouseLeave"/>
+
+        </Menu>
+        <Image x:Name="Logo" Grid.Row="1" Source="/Slike/Logo.png" Margin="0,39.2,0,45.4"/>
+
+        <local:DodavanjeK x:Name="DodavanjeK" Grid.Row="1" Visibility="Hidden"/>
+        <local:TabelaK x:Name="TabelaK" Grid.Row="1" Visibility="Hidden"/>
+        <local:KreiranjeP x:Name="KreiranjeP" Grid.Row="1" Visibility="Hidden"/>
+        <local:TabelaP x:Name="TabelaP" Grid.Row="1" Visibility="Hidden"/>
+        <local:KreiranjeF x:Name="KreiranjeF" Grid.Row="1" Visibility="Hidden"/>
+        <local:TabelaF x:Name="TabelaF" Grid.Row="1" Visibility="Hidden"/>
+        <local:KreiranjeO x:Name="KreiranjeO" Grid.Row="1" Visibility="Hidden"/>
+        <local:TabelaO x:Name="TabelaO" Grid.Row="1" Visibility="Hidden"/>
+
+    </Grid>
+</Window>
